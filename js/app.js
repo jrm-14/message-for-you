@@ -111,7 +111,7 @@ function onTap(){
   const rect = bigHeart.getBoundingClientRect();
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
-  for (let i = 0; i < 3; i++) spawnHeart(cx + rand(-20,20), cy + rand(-15,15));
+  for (let i = 0; i < 5; i++) spawnHeart(cx + rand(-20,20), cy + rand(-15,15));
 
   if (idx === MAX) {
     setTimeout(() => {
@@ -163,19 +163,13 @@ window.addEventListener('resize', () => {
   particlesCanvas.height = window.innerHeight;
 });
 replayBtn.addEventListener('click', () => {
-  // Reset indexes and taps
   idx = 0;
   taps = 0;
 
-  // Reset message area
   messageArea.textContent = "Hiii Chae 💖 Tap the heart to see messages.";
-
-  // Reset progress bar
   progressBar.style.width = '0%';
   attemptsEl.textContent = `Taps: 0`;
   statusEl.textContent = `Step 0/${MAX}`;
-
-  // Clear all particles
   particles = [];
 
   // Reset big heart scale and rotation
