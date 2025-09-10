@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>For Chae — A Little App</title>
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#ff7aa2"/>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" defer></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <div id="app" class="app-root">
+    <header class="topbar">
+      <div class="brand">
+        <img src="./assets/icon.png" alt="icon" class="icon">
+        <div>
+          <div class="title">Sayo lang talaga to Cherie Mae 😊</div>
+          <div class="subtitle">Try mo 💕</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="soundToggle" title="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="card glass">
+        <div id="intro" class="intro">
+          <h1 class="greeting">Chae <span class="heart-emoji">💖</span></h1>
+          <p class="lead">Tap the big heart — each tap reveals something I want you to know.</p>
+        </div>
+
+        <div id="gameArea" class="game-area">
+          <div id="messageArea" class="message">Tap anywhere to begin…</div>
+
+          <button id="bigHeart" class="big-heart" aria-label="Tap me">💗</button>
+
+          <div id="progressWrap" class="progress-wrap" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+
+          <div class="meta small">
+            <span id="attempts">Taps: 0</span>
+            <span id="status">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer-actions">
+        <button id="replayBtn" class="ghost">Replay</button>
+      </section>
+    </main>
+
+    <canvas id="particles" class="particles"></canvas>
+  </div>
+
+  <div id="a2hsPrompt" class="a2hs hidden">
+    <div>Install this little app?</div>
+    <div class="a2hs-actions">
+      <button id="a2hsYes">Yes</button>
+      <button id="a2hsNo">No</button>
+    </div>
+  </div>
+</body>
+</html>
